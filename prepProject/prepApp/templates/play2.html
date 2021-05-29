@@ -1,0 +1,27 @@
+<h1>오늘 과목</h1>
+
+
+<div>
+    <ul>
+        {% for i in subjects %}
+        <li>
+            {{ i.subject }}
+            {{ i.professor }}
+            {{ i.start_time }}
+            {{ i.finish_time }}
+
+        </li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for i in tf %}
+        <li>
+            {{ i }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'recordlist' %}">녹화하러가기</a>
+    <p>이번주에는 {{ travel_select }}로 놀러가자!</p>
+  
+</div>

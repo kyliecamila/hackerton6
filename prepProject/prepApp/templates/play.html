@@ -1,0 +1,26 @@
+<h1>오늘 과목</h1>
+
+
+<div>
+    <form method = "POST">
+        {% csrf_token %}
+    <ul>
+        {% for i in subjects %} 
+        <li>
+            {{ i.subject }}
+            {{ i.professor }}
+            {{ i.start_time }}
+            {{ i.finish_time }}
+            <!-- {{ i.record_choices}} -->
+            <select name="record[]">
+                <option value="True">녹화하기</option>
+                <option value="False">녹화안함</option>
+            </select>
+            <!-- <input type = "checkbox" name = "record[]" value = "True">녹화하기
+            <input type = "checkbox" name = "record[]" value = "False">녹화안함 -->
+        </li>
+        {% endfor %}
+    </ul>
+        <button input type = "submit" value="submit">제출</button>
+    </form>
+</div>
